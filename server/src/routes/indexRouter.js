@@ -1,5 +1,4 @@
 const router = require("express").Router(); //* получаем экземпляр роутинга из библиотеки
-
 const formatResponse = require("../utils/formatResponse"); //* подтягиваем утилиту для унификации ответа по 404
 
 // здесь пишем routes
