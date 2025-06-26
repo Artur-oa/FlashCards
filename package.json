@@ -1,0 +1,31 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mig": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate",
+    "seed": "npx sequelize db:seed:all",
+    "createDB": "npx sequelize db:create",
+    "dropDB": "npx sequelize db:drop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Artur-oa/FlashCards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Artur-oa/FlashCards/issues"
+  },
+  "homepage": "https://github.com/Artur-oa/FlashCards#readme",
+  "dependencies": {
+    "eslint": "^9.29.0",
+    "pg": "^8.16.2",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.3"
+  }
+}
