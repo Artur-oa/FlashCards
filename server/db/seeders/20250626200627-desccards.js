@@ -18,6 +18,11 @@ module.exports = {
         { name_card: "Барнаул", createdAt: new Date(), updatedAt: new Date() },
         { name_card: "Обнинск", createdAt: new Date(), updatedAt: new Date() },
         { name_card: "Сочи", createdAt: new Date(), updatedAt: new Date() },
+        {
+          name_card: "Ростов-на-Дону",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );
@@ -36,6 +41,7 @@ module.exports = {
           "Барнаул",
           "Обнинск",
           "Сочи",
+          "Ростов-на-Дону",
         ],
       },
       {}
