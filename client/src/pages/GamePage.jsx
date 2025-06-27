@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, data } from "react-router-dom";
-
 import "./GamePage.style.css";
 import { UserApi } from "../entities/UserApi";
 

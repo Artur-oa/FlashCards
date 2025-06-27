@@ -50,5 +50,9 @@ class UserServise {
     console.log("user after save:", user.toJSON());
     return user;
   }
+
+  static async getByEmail(email) {
+    return await User.findOne({ where: { email } });
+  }
 }
 module.exports = UserServise;

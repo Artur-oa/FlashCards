@@ -6,6 +6,7 @@ userRouter
   .get("/:id", UserController.getById)
   .post("/", UserController.create)
   .put("/:id", UserController.updateById)
-  .delete('/"id', UserController.deleteById);
+  .delete('/"id', UserController.deleteById)
+  .post("/login", UserController.login);
 
 module.exports = userRouter;
