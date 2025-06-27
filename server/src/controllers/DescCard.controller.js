@@ -1,5 +1,6 @@
 const DescCardService = require("../services/DescCard.service");
 const formatResponse = require("../utils/formatResponse");
+const CardService = require("../services/Card.service");
 
 class DescCardController {
   static async getAll(req, res) {

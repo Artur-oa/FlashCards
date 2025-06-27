@@ -1,4 +1,4 @@
-const {DescCard} = require("../../db/models/desccard")
+const {DescCard} = require("../../db/models")
 
 class DescCardService {
     static async getAllDescCard() {
