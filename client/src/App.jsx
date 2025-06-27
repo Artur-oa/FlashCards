@@ -1,8 +1,16 @@
+import { Route, Routes } from "react-router";
+import Layout from "./app/Layout";
+import UserForm from "./pages/UserForm/userForm";
+
 function App() {
   return (
-    <div>
-      <h1>Мой список задач</h1>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/users" element={<UserForm />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
