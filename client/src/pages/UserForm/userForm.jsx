@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./userForm.style.css";
+import { useNavigate } from "react-router-dom";
 export default function UserForm() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -30,10 +32,11 @@ export default function UserForm() {
     setName("");
     setEmail("");
     setPassword("");
+    navigate("/game");
   };
   return (
     <>
-      <form onSubmit={submit}>
+      <form onSubmit={submit} className="inputs">
         <input
           value={name}
           onChange={handleName}
@@ -41,6 +44,7 @@ export default function UserForm() {
           type="text"
           placeholder="name"
           required
+          className="name"
         />
         <input
           value={email}
@@ -49,6 +53,7 @@ export default function UserForm() {
           type="email"
           placeholder="email"
           required
+          className="email"
         />
         <input
           value={password}
@@ -57,6 +62,7 @@ export default function UserForm() {
           type="password"
           placeholder="password"
           required
+          className="password"
         />
         <button type="submit">Отпрвить</button>
       </form>
