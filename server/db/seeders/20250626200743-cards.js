@@ -518,6 +518,65 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        question:
+          'С каким счетом закончился групповой матч Лиги чемпионов "Ростов" - "Бавария" 23 ноября 2016 года?',
+        answer: JSON.stringify(["2-2", "1-3", "3-2", "0-4"]),
+        variable_answer: "3-2",
+        desc_id: themeMap["Ростов-на-Дону"],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        question:
+          "Что, по легенде, было встроено в стены зрительного зала Нахичеванского городского театра для улучшения акустики?",
+        answer: JSON.stringify([
+          "Кирпичи с дырками",
+          "Глиняные кувшины",
+          "Деревянные бочки",
+          "Медные трубы",
+        ]),
+        variable_answer: "Глиняные кувшины",
+        desc_id: themeMap["Ростов-на-Дону"],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        question:
+          "Ветви какого дерева изображены на гербе города Ростова-на-Дону?",
+        answer: JSON.stringify(["Берёзы", "Дуб", "Сосны", "Каштана"]),
+        variable_answer: "Дуб",
+        desc_id: themeMap["Ростов-на-Дону"],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        question: "Какова длина 6-ти полосного Ворошиловского моста?",
+        answer: JSON.stringify([
+          "624,2 метра",
+          "500 метров",
+          "1000 метров",
+          "850 метров",
+        ]),
+        variable_answer: "624,2 метра",
+        desc_id: themeMap["Ростов-на-Дону"],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        question:
+          "Какое здание в городе Ростове-на-Дону, по форме напоминающее трактор, является образцом грандиозного здания в стиле конструктивизма?",
+        answer: JSON.stringify([
+          "Гостиница Ростов",
+          "Кинотеатр Ростов",
+          "Театр им. М.Горького",
+          "Цирк",
+        ]),
+        variable_answer: "Театр им. М.Горького",
+        desc_id: themeMap["Ростов-на-Дону"],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ];
 
     await queryInterface.bulkInsert("Cards", questions, {});
