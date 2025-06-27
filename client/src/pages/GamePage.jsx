@@ -11,6 +11,7 @@ export default function GamePage() {
   const [step, setStep] = useState(0);
   const [feedback, setFeedback] = useState({}); // { [cardId]: true/false }
   const [showFeedback, setShowFeedback] = useState(false);
+  const userId = localStorage.getItem("userId");
 
   useEffect(() => {
     fetch(`http://localhost:3000/api/desccards/${deckId}/cards`)
@@ -27,6 +28,7 @@ export default function GamePage() {
       body: JSON.stringify({
         deckId: Number(deckId),
         answers: [{ cardId: cards[step].id, answer: option }],
+        userId: Number(userId),
       }),
     })
       .then((res) => res.json())
@@ -49,7 +51,11 @@ export default function GamePage() {
       fetch("http://localhost:3000/api/game/check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ deckId: Number(deckId), answers: answerArr }),
+        body: JSON.stringify({
+          deckId: Number(deckId),
+          answers: answerArr,
+          userId: Number(userId),
+        }),
       })
         .then((res) => res.json())
         .then((data) => setResult(data));

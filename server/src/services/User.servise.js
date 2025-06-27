@@ -39,5 +39,16 @@ class UserServise {
 
     return await userForDestroy.destroy();
   }
+
+  static async addScore(userId, points) {
+    console.log("addScore called", { userId, points });
+    const user = await this.getById(userId);
+    console.log("user found:", user ? user.toJSON() : null);
+    if (!user) return null;
+    user.score = (user.score || 0) + points;
+    await user.save();
+    console.log("user after save:", user.toJSON());
+    return user;
+  }
 }
 module.exports = UserServise;

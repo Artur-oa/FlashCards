@@ -1,7 +1,8 @@
 const { Card } = require("../../db/models");
+const UserServise = require("./User.servise");
 
 const GameService = {
-  async checkAnswers(deckId, answers) {
+  async checkAnswers(deckId, answers, userId) {
     const cardIds = answers.map((a) => a.cardId);
     const cards = await Card.findAll({
       where: { id: cardIds, desc_id: deckId },
@@ -16,6 +17,9 @@ const GameService = {
       ) {
         correctCount++;
       }
+    }
+    if (userId) {
+      await UserServise.addScore(userId, correctCount);
     }
     return { correctCount, total: answers.length };
   },
