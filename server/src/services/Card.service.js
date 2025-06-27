@@ -25,6 +25,9 @@ const CardService = {
     await card.destroy();
     return true;
   },
+    async getCardsByDeckId(deckId) {
+    return Card.findAll({ where: { desc_id: deckId } });
+  },
 };
 
 module.exports = CardService;
