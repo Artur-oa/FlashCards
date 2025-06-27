@@ -11,6 +11,24 @@ class DescCardController {
       res.status(500).json(formatResponse(500, "Ошибка сервера"));
     }
   }
+
+    static async getCardsByDeck(req, res) {
+    try {
+      const { id } = req.params;
+      const cards = await CardService.getCardsByDeckId(id);
+      const cardsWithOptions = cards.map((card) => ({
+        id: card.id,
+        question: card.question,
+        options: JSON.parse(card.answer),
+      }));
+      res.json(cardsWithOptions);
+    } catch (err) {
+      res.status(500).json({
+        message: "Ошибка при получении карточек колоды",
+        error: err.message,
+      });
+    }
+  }
 }
 
 module.exports = DescCardController;
