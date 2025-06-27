@@ -42,4 +42,15 @@ export class UserApi {
     const serverData = await response.json();
     return serverData;
   }
+  static async createNewScore(id, score) {
+    const response = await fetch(SERVER_USERS_ADRESS + `/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(score),
+    });
+    const serverData = await response.json();
+    return serverData;
+  }
 }

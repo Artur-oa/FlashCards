@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, data } from "react-router-dom";
+
 import "./GamePage.style.css";
+import { UserApi } from "../entities/UserApi";
 
 export default function GamePage() {
   const { deckId } = useParams();
@@ -60,10 +62,12 @@ export default function GamePage() {
         .then((res) => res.json())
         .then((data) => setResult(data));
     }
+    // const res = result.correctCount;
+    // await UserApi.updateByID(res);
   };
 
   const handleGoToDecks = () => {
-    navigate("/");
+    navigate("/deck");
   };
 
   if (!cards.length) return <div>Загрузка...</div>;
