@@ -46,7 +46,7 @@ export default function Layout() {
             Рекорды
           </NavLink>
         </nav>
-        <h1>Game Card</h1>
+        <h1>Добро пожаловать в игру!</h1>
       </header>
       <Outlet />
     </>
