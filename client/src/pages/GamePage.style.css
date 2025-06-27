@@ -1,0 +1,122 @@
+body {
+  background: linear-gradient(135deg, #2c2a28 0%, #5e4636 100%);
+}
+
+.game-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px 28px;
+  background: linear-gradient(135deg, #3a2f1b 60%, #7c5c2b 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 34, 18, 0.7), 0 0 0 6px #b08d57 inset;
+  border: 4px solid #b08d57;
+  position: relative;
+  z-index: 2;
+}
+
+.game-container:before, .game-container:after {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: url('https://cdn.pixabay.com/photo/2013/07/13/12/46/gear-146670_1280.png') no-repeat center/contain;
+  opacity: 0.18;
+  z-index: 1;
+}
+.game-container:before {
+  left: -32px;
+  top: -24px;
+}
+.game-container:after {
+  right: -32px;
+  bottom: -24px;
+}
+
+.game-question {
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+  color: #e6c07b;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0 2px 8px #2c1d0e;
+  border-bottom: 2px solid #b08d57;
+  padding-bottom: 10px;
+}
+
+.game-options label {
+  display: block;
+  margin-bottom: 12px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4b3a1e 60%, #7c5c2b 100%);
+  border: 2px solid #b08d57;
+  color: #e6c07b;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px #2c1d0e;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+  position: relative;
+}
+
+.game-options label:hover, .game-options input[type="radio"]:checked + span {
+  background: linear-gradient(90deg, #b08d57 60%, #7c5c2b 100%);
+  color: #2c1d0e;
+  border: 2px solid #e6c07b;
+  box-shadow: 0 4px 16px #b08d57, 0 0 8px #e6c07b inset;
+}
+
+.game-options input[type="radio"] {
+  accent-color: #b08d57;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 2px solid #b08d57;
+  box-shadow: 0 1px 4px #2c1d0e;
+}
+
+.game-feedback {
+  margin: 18px 0 14px 0;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #b08d57 60%, #7c5c2b 100%);
+  border-radius: 8px;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px #2c1d0e;
+  border: 2px solid #b08d57;
+}
+.game-feedback.wrong {
+  background: linear-gradient(90deg, #7c5c2b 60%, #b08d57 100%);
+  color: #2c1d0e;
+  border: 2px solid #e6c07b;
+}
+
+.game-next-btn {
+  margin-top: 18px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4b3a1e 60%, #7c5c2b 100%);
+  color: #e6c07b;
+  font-size: 1.1rem;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2c1d0e;
+  border: 2px solid #b08d57;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+}
+.game-next-btn:disabled {
+  background: #bdbdbd;
+  color: #7c5c2b;
+  cursor: not-allowed;
+  border: 2px solid #b08d57;
+}
+
+/* Плавность */
+.game-container, .game-next-btn, .game-options label, .game-feedback {
+  transition: all 0.25s cubic-bezier(.4,2,.3,1);
+}
