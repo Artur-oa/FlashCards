@@ -218,5 +218,25 @@ class UserController {
         .json(formatResponse(500, "Внутренняя ошибка сервера", null, message));
     }
   }
+
+  static async login(req, res) {
+    const { email, password } = req.body;
+    try {
+      const user = await UserServise.getByEmail(email);
+      if (!user || user.password !== password) {
+        return res.status(401).json({ message: "Неверный email или пароль" });
+      }
+      res
+        .status(200)
+        .json({
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          score: user.score,
+        });
+    } catch (err) {
+      res.status(500).json({ message: "Ошибка сервера", error: err.message });
+    }
+  }
 }
 module.exports = UserController;

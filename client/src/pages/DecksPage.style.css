@@ -1,0 +1,99 @@
+.decks-page {
+  max-width: 700px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #3a2f1b 60%, #7c5c2b 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(44, 34, 18, 0.7), 0 0 0 8px #b08d57 inset;
+  border: 5px solid #b08d57;
+  padding: 40px;
+  position: relative;
+  overflow: visible;
+}
+
+.decks-page-gear {
+  position: absolute;
+  top: -38px;
+  right: -38px;
+  width: 70px;
+  height: 70px;
+  opacity: 0.18;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decks-page-title {
+  color: #e6c07b;
+  font-family: "Cinzel", serif;
+  text-shadow: 0 2px 8px #2c1d0e;
+  border-bottom: 2px solid #b08d57;
+  padding-bottom: 14px;
+  margin-bottom: 32px;
+  font-size: 2.1rem;
+  letter-spacing: 2px;
+}
+
+.decks-list {
+  list-style: none;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.deck-item {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(90deg, #4b3a1e 60%, #7c5c2b 100%);
+  border-radius: 12px;
+  border: 2px solid #b08d57;
+  box-shadow: 0 2px 8px #2c1d0e;
+  padding: 16px 24px;
+  position: relative;
+}
+
+.deck-name {
+  color: #e6c07b;
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+  flex: 1;
+  text-shadow: 0 1px 4px #2c1d0e;
+}
+
+.deck-play-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 2px solid #b08d57;
+  background: linear-gradient(90deg, #4b3a1e 60%, #7c5c2b 100%);
+  color: #e6c07b;
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2c1d0e;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+}
+.deck-play-btn:hover {
+  background: linear-gradient(90deg, #b08d57 60%, #7c5c2b 100%);
+  color: #4b3a1e;
+}
+
+.logout-btn {
+  margin-top: 32px;
+  display: block;
+  width: 100%;
+  padding: 18px 0;
+  border-radius: 12px;
+  border: 3px solid #b08d57;
+  background: linear-gradient(90deg, #4b3a1e 60%, #7c5c2b 100%);
+  color: #e6c07b;
+  font-family: "Cinzel", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px #2c1d0e, 0 0 8px #b08d57 inset;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+}
+.logout-btn:hover {
+  background: linear-gradient(90deg, #b08d57 60%, #7c5c2b 100%);
+  color: #4b3a1e;
+}
