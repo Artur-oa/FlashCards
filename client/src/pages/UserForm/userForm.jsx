@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./userForm.style.css";
 import { useNavigate } from "react-router-dom";
+import { UserApi } from "../../entities/UserApi";
 export default function UserForm() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   const handleName = (e) => {
@@ -17,7 +19,7 @@ export default function UserForm() {
     setEmail(e.target.value);
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
 
     if (!name.trim() || !password.trim() || !email.trim()) {
@@ -29,6 +31,9 @@ export default function UserForm() {
     newObj.password = password;
     //отправка в базу, но пока что консоль лог
     console.log(newObj);
+    const user = await UserApi.create(newObj);
+    console.log(user);
+    setUser(user);
     setName("");
     setEmail("");
     setPassword("");
@@ -36,6 +41,7 @@ export default function UserForm() {
   };
   return (
     <>
+      {user && <p> {user.name}</p>}
       <form onSubmit={submit} className="inputs">
         <input
           value={name}

@@ -104,10 +104,10 @@ class UserController {
     }
   }
   static async create(req, res) {
-    const { isValid, error } = User.validate(req.body);
-    if (!isValid) {
-      return res.status(400).json(formatResponse(400, error, null, error));
-    }
+    // const { isValid, error } = User.validate(req.body);
+    // if (!isValid) {
+    //   return res.status(400).json(formatResponse(400, error, null, error));
+    // }
     try {
       const newUser = await UserServise.create(req.body);
       if (!newUser)
@@ -121,7 +121,7 @@ class UserController {
               "Не удалось создать запись пользователя в бд"
             )
           );
-      return res.redirect("/");
+      return res.status(200).json(newUser);
     } catch ({ message }) {
       console.log("=============UserController.create=============", message);
       res

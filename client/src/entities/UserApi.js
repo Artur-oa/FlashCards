@@ -28,7 +28,7 @@ export class UserApi {
   static async updateByID(id) {
     const response = await this.getById();
     if (response === id) {
-      console.log(`пользователь с такис именем уже существует`);
+      console.log(`пользователь с таким именем уже существует`);
       return;
     }
     const serverData = await response.json();
