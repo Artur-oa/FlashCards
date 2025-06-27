@@ -70,7 +70,7 @@ export default function UserForm() {
           required
           className="password"
         />
-        <button type="submit">Отпрвить</button>
+        <button type="submit">Отправить</button>
       </form>
     </>
   );
