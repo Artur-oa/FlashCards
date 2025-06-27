@@ -1,0 +1,51 @@
+.game-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+.game-question {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+.game-options label {
+  display: block;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.game-options input[type="radio"]:checked + span {
+  font-weight: bold;
+  color: #1976d2;
+}
+.game-feedback {
+  margin: 14px 0 10px 0;
+  font-weight: bold;
+  color: #fff;
+  background: #1976d2;
+  border-radius: 6px;
+  padding: 8px 0;
+  text-align: center;
+}
+.game-feedback.wrong {
+  background: #d32f2f;
+}
+.game-next-btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  background: #1976d2;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.game-next-btn:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
