@@ -32,12 +32,12 @@ export default function UserForm() {
     //отправка в базу, но пока что консоль лог
     console.log(newObj);
     const user = await UserApi.create(newObj);
-    console.log(user);
+    console.log(user.score);
     setUser(user);
     setName("");
     setEmail("");
     setPassword("");
-    navigate("/game");
+    navigate("/deck");
   };
   return (
     <>
