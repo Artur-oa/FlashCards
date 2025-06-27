@@ -42,6 +42,9 @@ export default function Layout() {
               Выйти
             </button>
           )}
+          <NavLink to="/users-list" className="nav-link">
+            Рекорды
+          </NavLink>
         </nav>
         <h1>Game Card</h1>
       </header>
